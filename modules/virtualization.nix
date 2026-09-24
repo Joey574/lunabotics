@@ -10,7 +10,7 @@
     ];
 
     cores = 6;
-    memorySize = 16384;
+    memorySize = 4096;
     resolution = {
       x = 1920;
       y = 1080;

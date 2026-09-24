@@ -107,7 +107,7 @@
     sysstat
     lm_sensors
 
-    linuxPackages.perf
+    perf
 
     kdePackages.konsole
     kdePackages.ksystemlog
@@ -167,7 +167,7 @@
     after = [ "network.target" ];
 
     serviceConfig = {
-      ExecStart = "${pkgs.tcpdump}/bin.tcpdump -i any -C 100 -W 10 -n -s 0 -w /var/log/pcap/capture.pcap";
+      ExecStart = "${pkgs.tcpdump}/bin/tcpdump -i any -C 100 -W 10 -n -s 0 -w /var/log/pcap/capture.pcap";
       Restart = "on-failure";
     };
 

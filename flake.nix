@@ -52,7 +52,8 @@
         };
 
         testScript = ''
-          start_all()
+          start()
+          op1.succeed("ldd $(readlink -f /run/current-system/sw/bin/sddm) | grep 'not found'")
           op1.wait_for_unit("multi-user.target")
           op1.wait_for_unit("display-manager.service")
           op1.sleep(3)
