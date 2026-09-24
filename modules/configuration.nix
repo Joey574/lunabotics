@@ -7,6 +7,7 @@
 {
   imports = [
     ./slim.nix
+    ./virtualization.nix
   ];
 
   # Use the systemd-boot EFI boot loader.

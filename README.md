@@ -26,5 +26,5 @@ nix flake --version
 
 to build the test environment run
 ```bash
-
+sudo nix build .#checks.x86_64-linux.interactive-test.driverInteractive
 ```
