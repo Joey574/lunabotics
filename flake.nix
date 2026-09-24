@@ -46,6 +46,7 @@
         nodes = {
           op1 = { pkgs, ... }: {
             imports = [ ./modules/configuration.nix ];
+            virtualisation.useNixStoreImage = true;
             environment.systemPackages = [ self.packages.${system}.lunabotics ];
             _module.args.ndeploy = self.packages.${system}.lunabotics;
           };
