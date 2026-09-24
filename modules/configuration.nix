@@ -146,16 +146,15 @@
 
   # Journalctl logging config
   # Persistent storage allows us to inspect logs after reboot
-  # rest of the params just limit resource usage
-  services.journald.extraConfig = ''
-    SystemMaxUse=500M
-    RuntimeMaxUse=100M
-    Storage=persistent
-    Compress=yes
+  # rest of the params just limit resource usage and forward to remote
+  #services.journald.settings = ''
+  #  SystemMaxUse=500M
+  #  RuntimeMaxUse=100M
+  #  Storage=persistent
+  #  Compress=yes
 
-    # Forward to remote logging pipeline
-    ForwardToSyslog=yes
-  '';
+  #  ForwardToSyslog=yes
+  #'';
 
   # CPU logging (10s interval by default)
   services.sysstat.enable = true;
@@ -185,13 +184,13 @@
   };
 
   # Run i/o logging on timer
-  systemd.timer.iostat-logger = {
-    wantedBy = [ "timers.target" ];
-    timerConfig = {
-      OnCalender = "*:*:0/10";
-      Persistent = true;
-    };
-  };
+  #systemd.timer.iostat-logger = {
+  #  wantedBy = [ "timers.target" ];
+  #  timerConfig = {
+  #    OnCalender = "*:*:0/10";
+  #    Persistent = true;
+  #  };
+  #};
 
   system.stateVersion = "26.05";
 }
