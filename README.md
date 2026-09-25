@@ -60,7 +60,7 @@ restart your shell then verify with
 nix flake --version
 ```
 
-to build the test environment run the follwing, make sure you are charging your computer and are comfy, this will start a multi giga byte download
+to build the test environment run the follwing, make sure you are charging your computer and are comfy, this will start a multi gigabyte download
 ```bash
 sudo nix build .#checks.x86_64-linux.interactive-test.driverInteractive
 ```

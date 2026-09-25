@@ -34,4 +34,17 @@
   # Disable unused services
   services.printing.enable = false;
   services.avahi.enable = false;
+
+  # Disable plasma wallet manager
+  environment.etc."xdg/kwalletrc".text = ''
+    [Wallet]
+    Enabled=false
+    First Use=false
+  '';
+
+  # More de bloat
+  services.xserver.excludePackages = [ pkgs.xterm ];
+  documentation.nixos.enable = false;
+  programs.command-not-found.enable = false;
+  boot.loader.timeout = 1;
 }
