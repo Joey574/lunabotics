@@ -19,8 +19,9 @@ This gives you your own branch to freely develop on without needed reviews for e
 
 The main commands you are going to need for git are the following
 ```bash
-git add . # this adds all the in-progess changes
-git commit -m "some message" # this commits all the in-progress changes and gives it a descriptive message
+# stages and commits all the uncommited local changes
+git add .
+git commit -m "some message"
 
 # push sends local commits up to the cloud
 # pull will bring them down
@@ -32,16 +33,15 @@ git checkout main
 git checkout yourname-dev
 ```
 
-```bash
-
-```
-
 ## Setup
 First you need to install wsl if on windows, if you're on linux or mac, skip to the next step
 
 Install nix
 ```bash
 curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install | sh -s -- --daemon
+
+sudo apt update
+sudo apt install nix-bin
 ```
 
 verify your installation with
@@ -60,7 +60,7 @@ restart your shell then verify with
 nix flake --version
 ```
 
-to build the test environment run
+to build the test environment run the follwing, make sure you are charging your computer and are comfy, this will start a multi giga byte download
 ```bash
 sudo nix build .#checks.x86_64-linux.interactive-test.driverInteractive
 ```
