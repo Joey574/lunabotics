@@ -10,12 +10,13 @@ this downloads all the files you'll need locally, you can then move into that pr
 cd ./lunabotics
 ```
 
-Main is a protected branch, meaning no one can push to it directly, all pushes must be reviewed by another member of the team before going into main, for quick development I recommend running
+Main is a protected branch, meaning no one can push to it directly, all pushes must be reviewed by another member of the team before going into main
+to develop features collaboratively I recommend running
 ```bash
 git checkout -b yourname-dev
 ```
 
-This gives you your own branch to freely develop on without needed reviews for each push, when you're ready to commit something to main, you can open up github via the browser and it will prompt you to create a pull request
+This gives you your own branch to freely develop on without needed reviews for each push, others will also be able to checkout your branch and contribute to it, when you're ready to commit something to main, you can open up github via the browser and it will prompt you to create a pull request.
 
 The main commands you are going to need for git are the following
 ```bash

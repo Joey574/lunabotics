@@ -24,13 +24,13 @@
     "quiet"
     "mitigations=off" 	# Disable mitigations like spectre/meltdown, isolated competition hardware doesn't need it
 
-    # Below commands isolate cores at idx 0-1 from the kernel
+    # Below commands isolate cores at idx 2-3 from the kernel
     # preventing interupts or other events from happening on them
     # This allows us to pin our own proccess on these cores and get
     # much higher realtime performance / lower latency
-    "nohz_full=0-1"
-    "rcu_nocbs=0-1"
-    "isolcpus=0-1"
+    "nohz_full=2-3"
+    "rcu_nocbs=2-3"
+    "isolcpus=2-3"
 
     # Enable watchdog to prevent kernel hang
     "nmi_watchdog=1"
