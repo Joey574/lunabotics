@@ -10,12 +10,13 @@ this downloads all the files you'll need locally, you can then move into that pr
 cd ./lunabotics
 ```
 
-Main is a protected branch, meaning no one can push to it directly, all pushes must be reviewed by another member of the team before going into main, for quick development I recommend running
+Main is a protected branch, meaning no one can push to it directly, all pushes must be reviewed by another member of the team before going into main
+to develop features collaboratively I recommend running
 ```bash
 git checkout -b yourname-dev
 ```
 
-This gives you your own branch to freely develop on without needed reviews for each push, when you're ready to commit something to main, you can open up github via the browser and it will prompt you to create a pull request
+This gives you your own branch to freely develop on without needed reviews for each push, others will also be able to checkout your branch and contribute to it, when you're ready to commit something to main, you can open up github via the browser and it will prompt you to create a pull request.
 
 The main commands you are going to need for git are the following
 ```bash
@@ -23,8 +24,11 @@ The main commands you are going to need for git are the following
 git add .
 git commit -m "some message"
 
-# push sends local commits up to the cloud
-# pull will bring them down
+# typically you just run those one after another, and you can combine them into
+git commit -am "some message"
+
+# push sends local commits up to github's servers
+# pull will bring them back down, including anyone elses commits
 git push origin yourname-dev
 git pull origin yourname-dev
 
@@ -33,34 +37,4 @@ git checkout main
 git checkout yourname-dev
 ```
 
-## Setup
-First you need to install wsl if on windows, if you're on linux or mac, skip to the next step
-
-Install nix
-```bash
-curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install | sh -s -- --daemon
-
-sudo apt update
-sudo apt install nix-bin
-```
-
-verify your installation with
-```bash
-nix-env --version
-```
-
-enable experimental features
-```bash
-sudo mkdir -p /etc/nix
-echo "experimental-features = nix-command flakes" | sudo tee -a /etc/nix/nix.conf
-```
-
-restart your shell then verify with
-```bash
-nix flake --version
-```
-
-to build the test environment run the follwing, make sure you are charging your computer and are comfy, this will start a multi giga byte download
-```bash
-sudo nix build .#checks.x86_64-linux.interactive-test.driverInteractive
-```
+I'd recommend always running ```git pull``` when you start development to make sure you have the most up to date changes
