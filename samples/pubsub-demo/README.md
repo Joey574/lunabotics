@@ -15,19 +15,21 @@ Ensure you have the following installed:
 After cloning this folder you can run:
 
 ```sh
-colcon build --packages-select pubsub-demo
+source /opt/ros/lyrical/setup.bash  # adds ros2 command to terminal, must be run in new terminals (before colcon build)
+
+colcon build --packages-select pubsub-demo  # build the package (~10+ sec)
 ```
 
 Then to run the publisher node, do:
 ```sh
-. install/setup.bash   # adds ros2 command to terminal, must be run in new terminals
+. install/setup.bash   # adds the package (required)
 
-ros2 run cpp_pubsub talker
+ros2 run pubsub-demo talker
 ```
 
 Open another terminal to run the listener node:
 ```sh
 . install/setup.bash
 
-ros2 run cpp_pubsub listener
+ros2 run pubsub-demo listener
 ```
