@@ -27,17 +27,20 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     wget \
     && rm -rf /var/lib/apt/lists/*
 
-ARG USERNAME=ros
-ARG USER_UID=1000
-ARG USER_GID=1000
+    ARG USERNAME=ros
 
-RUN groupadd --gid "${USER_GID}" "${USERNAME}" \
-    && useradd --uid "${USER_UID}" --gid "${USER_GID}" \
-        --create-home --shell /bin/bash "${USERNAME}" \
-    && echo "${USERNAME} ALL=(ALL) NOPASSWD:ALL" \
-        > "/etc/sudoers.d/${USERNAME}" \
-    && chmod 0440 "/etc/sudoers.d/${USERNAME}" \
-    && if [ ! -f /etc/ros/rosdep/sources.list.d/20-default.list ]; then rosdep init; fi
+    RUN groupadd "${USERNAME}" \
+        && useradd \
+            --gid "${USERNAME}" \
+            --create-home \
+            --shell /bin/bash \
+            "${USERNAME}" \
+        && echo "${USERNAME} ALL=(ALL) NOPASSWD:ALL" \
+            > "/etc/sudoers.d/${USERNAME}" \
+        && chmod 0440 "/etc/sudoers.d/${USERNAME}" \
+        && if [ ! -f /etc/ros/rosdep/sources.list.d/20-default.list ]; then \
+            rosdep init; \
+        fi
 
 RUN printf '%s\n' \
     'source /opt/ros/lyrical/setup.bash' \
