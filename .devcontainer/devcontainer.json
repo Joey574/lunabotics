@@ -1,0 +1,30 @@
+{
+  "name": "ROS 2 Lyrical",
+  "dockerComposeFile": "compose.yml",
+  "service": "ros2",
+  "workspaceFolder": "/workspace",
+  "remoteUser": "ros",
+  "shutdownAction": "stopCompose",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-iot.vscode-ros",
+        "redhat.vscode-xml",
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/bin/python3",
+        "terminal.integrated.defaultProfile.linux": "bash",
+      },
+    },
+
+    "zed": {
+      "extensions": [],
+    },
+  },
+
+  "postCreateCommand": "bash /workspace/.devcontainer/scripts/post-create.sh",
+}
