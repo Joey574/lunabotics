@@ -8,7 +8,7 @@ Ensure you have the following installed:
 
 - `rclcpp` and `std_msgs`
 - `geometry_msgs`
-- `ros-lyrical-turtlesim`: This is not included in the devcontainer currently and can be installed with `sudo apt install ros-lyrical-turtlesim`
+- `ros-lyrical-turtlesim`: This is not included in the devcontainer currently and can be installed with `sudo apt install ros-lyrical-turtlesim`.
 
 ## Testing Turtlesim
 
@@ -18,7 +18,7 @@ First ensure that the `ros2` command works. If not, source the setup file:
 source /opt/ros/lyrical/setup.bash
 ```
 
-To test out turtlesim you can run the UI along with a builtin keyboard input node. Start the simulation node in your first terminal, this should open up the turtlesim window:
+Once you have turtlesim installed (see above), you can run the UI along with a builtin keyboard input node. Start the simulation node in your first terminal, this should open up the turtlesim window:
 
 ```sh
 ros2 run turtlesim turtlesim_node
