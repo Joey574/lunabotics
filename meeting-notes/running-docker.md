@@ -6,17 +6,28 @@ This document (WIP) contains tips for working with docker.
 
 Ensure that you have [docker engine](https://docs.docker.com/engine/install/) installed before proceeding.
 
-After cloning the repo, you will need to build the image. This will fetch the base image `ros:lyrical-ros-base-resolute` (~2.03GB) and build it, which may take several minutes. It is recommended to stay in the root folder and not `cd` into `.devcontainer` for building. Run the build command from `compose.yml`:
+After cloning the repo, you can start up the environment with `docker compose up`. On a fresh install, Docker will fetch the base image `ros:lyrical-ros-base-resolute` (~2.03GB) and build your local image, which may take several minutes.
 
-```sh
-docker compose -f .devcontainer/compose.yml build
-```
-
-Once it finishes, you can run the `ros2` service defined in `compose.yml`.
 ```sh
 cd .devcontainer
-docker compose up
+docker compose up -d    # -d is optional: runs in detached mode allowing you to continue using the terminal.
 ```
+
+### Interacting with the Environment
+Once the container is up and running, open an interactive terminal session inside it to start running ROS 2 commands:
+
+```sh
+docker compose exec -it ros2 bash   # ros2 is the service name in compose.yml
+```
+
+### Stopping the Environment
+To stop the containers, run this command from the same folder:
+
+```sh
+docker compose down
+```
+
+(If not running in detached mode, press `Ctrl+C` in the process to gracefully shut down.)
 
 ## Zed
 
