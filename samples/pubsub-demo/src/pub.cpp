@@ -28,6 +28,7 @@ public:
       [this]() -> void {
         auto message = std_msgs::msg::String();
         message.data = "Hello, world! " + std::to_string(this->count_++);
+        // message.data is the actual message data, which is a string in this case. The counter is incremented each time the timer_callback is executed.
         RCLCPP_INFO(this->get_logger(), "Publishing: '%s'", message.data.c_str());
         // RCLCPP_INFO is a macro that will print the message to the console.
         this->publisher_->publish(message);
