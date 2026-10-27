@@ -23,6 +23,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-venv \
     python3-vcstool \
     ros-lyrical-rmw-cyclonedds-cpp \
+    ros-lyrical-turtlesim \
     sudo \
     wget \
     && rm -rf /var/lib/apt/lists/*
