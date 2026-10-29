@@ -16,7 +16,9 @@ docker compose up -d    # -d is optional: runs in detached mode so you can keep 
 Once the container is up and running, open an interactive terminal session inside it to start running ROS 2 commands:
 
 ```sh
-docker compose exec -it ros2 bash   # 'ros2' is the service name defined in compose.yml
+docker ps # this lists out all the running containers along with their names
+
+docker exec -it 'name' bash   # 'name' here is the name of the container on your machine
 ```
 
 To stop the containers, run this command from the same directory:
