@@ -28,13 +28,15 @@ public:
       [this]() -> void {
         auto message = std_msgs::msg::String();
         message.data = "Hello, world! " + std::to_string(this->count_++);
-        // message.data is the actual message data, which is a string in this case. The counter is incremented each time the timer_callback is executed.
+        /* message.data is the actual message data, which is a string in 
+        this case. The counter is incremented each time the timer_callback is executed. */
         RCLCPP_INFO(this->get_logger(), "Publishing: '%s'", message.data.c_str());
         // RCLCPP_INFO is a macro that will print the message to the console.
         this->publisher_->publish(message);
       };
     timer_ = this->create_wall_timer(500ms, timer_callback);
-    // The timer declares that every 0.5 seconds, the function timer_callback will be executed.
+    /* The timer declares that every 0.5 seconds, the function timer_callback 
+    will be executed. */
   }
 
 private:
@@ -50,5 +52,7 @@ int main(int argc, char * argv[])
   rclcpp::spin(std::make_shared<MinimalPublisher>());
   rclcpp::shutdown();
   return 0;
-  // In main, the code is finally executed. ROS2 is initialized, then rclcpp:spin() is called to execute the node, and finally rclcpp::shutdown() is called to clean up.
+  /* In main, the code is finally executed. ROS2 is initialized, then 
+  rclcpp:spin() is called to execute the node, and finally rclcpp::shutdown() 
+  is called to clean up. */
 }
