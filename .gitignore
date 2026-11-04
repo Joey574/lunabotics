@@ -1,1 +1,4 @@
 shell.nix
+build
+install
+log
