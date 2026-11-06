@@ -1,3 +1,6 @@
+build
+install
+log
 shell.nix
 build
 install
