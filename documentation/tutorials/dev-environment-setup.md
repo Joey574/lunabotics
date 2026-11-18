@@ -13,11 +13,11 @@ cat Hello World!
 
 ## Table of contents
 
-1. Install VS Code
-2. Install Git
-3. Install pixi
-4. Set up pixi
-5. Building the project
+1. [Install VS Code](#section-1---install-vs-code)
+2. [Install Git](#section-2---install-git)
+3. [Install pixi](#section-3---install-pixi)
+4. [Set up pixi](#section-4-set-up-pixi-in-the-project)
+5. [Building the project](#section-5-build-the-package)
 
 ## Section 1 - Install VS Code
 
