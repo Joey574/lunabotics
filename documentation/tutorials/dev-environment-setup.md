@@ -3,7 +3,7 @@
 This tutorial explains how to install and configure Visual Studio Code (VS Code) for the Lunabotics project using any operating system, then setting up the IDE with Git, Pixi, and running ROS2.
 
 Lines within a comment block indicate commands that should be entered into the specified CLI application.
-```wsl
+```bash
 cat Hello World!
 ```
 
@@ -27,13 +27,13 @@ Skip this if you want to use a different editor of choice.
 
 **windows**
 
-```shell
+```powershell
 winget install -e --id Microsoft.VisualStudioCode
 ```
 
 **mac**
 
-```shell
+```zsh
 brew install --cask visual-studio-code
 ```
 
@@ -57,13 +57,13 @@ Open Settings with `Ctrl+,` and enable **Format On Save** if the project provide
 
 **windows**
 
-```shell
+```powershell
 winget install --id Git.Git
 ```
 
 **mac**
 
-```shell
+```zsh
 brew install git
 ```
 
@@ -71,49 +71,49 @@ brew install git
 
 Every distro uses git as the package name:
 
-```shell
+```bash
 sudo apt install git
 ```
 2. On first use, set your Git identity:
 
-```Git Bash
+```bash
 git config --global user.name "Your Name"
 git config --global user.email "you@example.com"
 ```
 3. Confirm the config values are accurate:
 
-```Git Bash
+```bash
 git config --global --list
 ```
 4. (Optional) Choose a new default text editor for Git.
 
-```Git Bash
+```bash
 git config --global core.editor "C:/Path/To/Editor.exe"
 ```
 5. On VS Code, open the Git Bash terminal from the 'Terminal' menu or with ''Ctrl+` `` and clone the repository:
 
-```Git Bash
+```bash
 git clone https://github.com/Joey574/lunabotics.git
 git fetch
 git pull
 ```
 
-Keep the repository in the Linux filesystem, such as `~/lunabotics`, instead of `/mnt/c`. You will now have the lunabotics project code in your source control! VS Code will place you initially on the 'Main' branch. Main is a protected branch, meaning no one can push to it directly, all pushes must be reviewed by another member of the team before going into Main. You will need to checkout your own branch or switch to another branch to begin pushing commits.
+You will now have the lunabotics project code in your source control! VS Code will place you initially on the 'Main' branch. Main is a protected branch, meaning no one can push to it directly, all pushes must be reviewed by another member of the team before going into Main. You will need to checkout your own branch or switch to another branch to begin pushing commits.
 
-```Git Bash
+```bash
 git checkout -b yourname-dev
 ```
 
 On your own branch you can commit freely without needing a review. When you want to commit your current work to your branch use:
 
-```Git Bash
+```bash
 git add .
 git commit -m "some message"
 ```
 
 Where the message should describe what work has been done during the commit. When you are ready to push to main use:
 
-```Git Bash
+```bash
 git push origin yourname-dev
 ```
 
@@ -123,13 +123,13 @@ Or alternatively start a pull request on the GitHub page. Make sure to always ru
 
 ### Windows
 
-```shell
+```powershell
 winget install --id prefix-dev.pixi
 ```
 
 ### macOS
 
-```shell
+```zsh
 brew install pixi
 ```
 
@@ -137,13 +137,13 @@ brew install pixi
 
 Some distributions provide a specific package for Pixi:
 
-```shell
+```bash
 emerge --ask pixi
 ```
 
 On distributions that do not support this package, run:
 
-```shell
+```bash
 curl -fsSL https://pixi.sh/install.sh | bash
 ```
 
@@ -151,7 +151,7 @@ curl -fsSL https://pixi.sh/install.sh | bash
 
 From the root of your project, run:
 
-```shell
+```bash
 pixi install
 pixi shell
 ```
