@@ -15,6 +15,9 @@ cat Hello World!
 
 1. Install VS Code
 2. Install Git
+3. Install pixi
+4. Set up pixi
+5. Building the project
 
 ## Section 1 - Install VS Code
 
@@ -160,10 +163,7 @@ skipping the `/opt/*` source instructions.
 
 ## Troubleshooting
 
-- **`code: command not found`:** Restart Ubuntu and VS Code, then verify that VS Code was installed with the PATH option enabled.
-- **The folder opens in Windows instead of WSL:** Run `code .` from the Ubuntu terminal and select **WSL: Reopen Folder in WSL** from the Command Palette (`Ctrl+Shift+P`).
-- **The project is slow:** Move it from `/mnt/c` into the WSL filesystem and reopen it from Ubuntu.
-- **WSL is unavailable:** Run `wsl --update` in PowerShell and restart the computer.
+- **`code: command not found`:** Restart your terminal and VS Code, then verify that VS Code was installed with the PATH option enabled.
 
 ## Additional Resources
 
