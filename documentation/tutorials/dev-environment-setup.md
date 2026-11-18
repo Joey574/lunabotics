@@ -161,6 +161,8 @@ pixi shell
 Follow the build instructions for the specific package from the project root,
 skipping the `/opt/*` source instructions.
 
+You do need to be in a pixi shell for this to work well otherwise add `pixi run` before every script such as `pixi run colcon build`
+
 ## Troubleshooting
 
 - **`code: command not found`:** Restart your terminal and VS Code, then verify that VS Code was installed with the PATH option enabled.
