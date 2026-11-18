@@ -477,7 +477,6 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/wslink-2.6.0-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/zipp-4.1.2-pyh5ded981_0.conda
       - conda: https://conda.anaconda.org/robostack-humble/linux-64/ros-humble-desktop-0.10.0-hb0f4dca_22.conda
-      - conda: https://conda.anaconda.org/robostack-humble/linux-64/ros-humble-turtlesim-1.4.3-hb0f4dca_22.conda
       - conda: https://conda.anaconda.org/robostack-humble/linux-64/ros2-action-msgs-1.2.3-np2py314h53a0733_22.conda
       - conda: https://conda.anaconda.org/robostack-humble/linux-64/ros2-action-tutorials-cpp-0.20.10-np2py314h53a0733_22.conda
       - conda: https://conda.anaconda.org/robostack-humble/linux-64/ros2-action-tutorials-interfaces-0.20.10-np2py314h53a0733_22.conda
@@ -2463,7 +2462,6 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/win-64/zstd-1.5.7-h534d264_7.conda
       - conda: https://conda.anaconda.org/conda-forge/win-64/zziplib-0.13.69-h3ca93ac_2.conda
       - conda: https://conda.anaconda.org/robostack-humble/win-64/ros-humble-desktop-0.10.0-h9490d1a_22.conda
-      - conda: https://conda.anaconda.org/robostack-humble/win-64/ros-humble-turtlesim-1.4.3-h9490d1a_22.conda
       - conda: https://conda.anaconda.org/robostack-humble/win-64/ros2-action-msgs-1.2.3-np2py314hf807026_22.conda
       - conda: https://conda.anaconda.org/robostack-humble/win-64/ros2-action-tutorials-cpp-0.20.10-np2py314hf807026_22.conda
       - conda: https://conda.anaconda.org/robostack-humble/win-64/ros2-action-tutorials-interfaces-0.20.10-np2py314hf807026_22.conda
@@ -22803,14 +22801,6 @@ packages:
   - ros2-distro-mutex 0.11.* humble_*
   size: 2056
   timestamp: 1792812974662
-- conda: https://conda.anaconda.org/robostack-humble/linux-64/ros-humble-turtlesim-1.4.3-hb0f4dca_22.conda
-  sha256: 6f446069fcca27337fdfea724ef2575710488ae3637f6e775aa9d14ab4c06688
-  md5: 996e579e37ba83fb0c8155c360c56e58
-  depends:
-  - ros2-turtlesim ==1.4.3
-  - ros2-distro-mutex 0.11.* humble_*
-  size: 2065
-  timestamp: 1792807969042
 - conda: https://conda.anaconda.org/robostack-humble/linux-64/ros2-action-msgs-1.2.3-np2py314h53a0733_22.conda
   sha256: 0a74b5a7964d16c98ce726c6fde39e4b5c9741d65554b0367f057236ac2a11cf
   md5: 8fc580367af017203b8a5655d7c80af9
@@ -40203,14 +40193,6 @@ packages:
   - ros2-distro-mutex 0.11.* humble_*
   size: 2045
   timestamp: 1792837150401
-- conda: https://conda.anaconda.org/robostack-humble/win-64/ros-humble-turtlesim-1.4.3-h9490d1a_22.conda
-  sha256: 51ebf724f6f1bc54efe3b79cc1b53caa24b14c36857b5c29825176ac7afc12d2
-  md5: 89b0fd266241803edf74a6036358392e
-  depends:
-  - ros2-turtlesim ==1.4.3
-  - ros2-distro-mutex 0.11.* humble_*
-  size: 2058
-  timestamp: 1792823699748
 - conda: https://conda.anaconda.org/robostack-humble/win-64/ros2-action-msgs-1.2.3-np2py314hf807026_22.conda
   sha256: cba182b5efe491aac79f24395dad27f464d2f32c7f9aaa51ff81bdc0b5041624
   md5: 1f98a03ec3b0cba0ab923d6e96ba5d19
