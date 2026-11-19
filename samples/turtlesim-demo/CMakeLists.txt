@@ -15,7 +15,26 @@ find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 
+find_program(CLANG_TIDY_EXE NAMES "clang-tidy")
+
+if(CLANG_TIDY_EXE)
+    set(CMAKE_CXX_CLANG_TIDY "${CLANG_TIDY_EXE}")
+else()
+    message(WARNING "clang-tidy not found!")
+endif()
+
+find_program(CLANG_FORMAT NAMES clang-format REQUIRED)
+
+list(APPEND CMAKE_MODULE_PATH
+  "${CMAKE_CURRENT_SOURCE_DIR}/../../cmake"
+)
+
+include(helpfulFunctions)
+
 add_executable(circle src/circle.cpp)
+
+registerFilesToFormat(FILES src/circle.cpp)
+
 target_link_libraries(circle PUBLIC rclcpp::rclcpp std_msgs::std_msgs
 geometry_msgs::geometry_msgs__rosidl_typesupport_cpp
 )
