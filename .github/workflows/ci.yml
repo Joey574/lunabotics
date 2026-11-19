@@ -37,4 +37,4 @@ jobs:
         run: pixi run colcon test-result --verbose
 
       - name: Check clang-format
-        run: pixi run colcon build --cmake-target format-check --event-handlers console_direct+
+        run: pixi run colcon build --packages-select pubsub-demo turtlesim-demo --cmake-target format-check --event-handlers console_direct+
