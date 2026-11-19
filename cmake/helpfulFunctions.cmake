@@ -16,10 +16,11 @@ function(registerFilesToFormat)
 	endif()
 
 	foreach(file IN LISTS TARGET_FILES)
+        string(MAKE_C_IDENTIFIER "${file}" file_identifier)
 
-        set(Code "Format${file}")
-        set(Target "Target${file}")
-        set(Check "CheckFormat${file}")
+        set(Code "Format_${file_identifier}")
+        set(Target "Target_${file_identifier}")
+        set(Check "CheckFormat_${file_identifier}")
 
         set(fullTargetPath ${CMAKE_CURRENT_LIST_DIR}/${file})
         file(RELATIVE_PATH filePath ${CMAKE_SOURCE_DIR} ${fullTargetPath})

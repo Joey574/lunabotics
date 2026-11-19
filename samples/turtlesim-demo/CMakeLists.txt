@@ -15,7 +15,18 @@ find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 
+find_program(CLANG_FORMAT NAMES clang-format REQUIRED)
+
+list(APPEND CMAKE_MODULE_PATH
+  "${CMAKE_CURRENT_SOURCE_DIR}/../../cmake"
+)
+
+include(helpfulFunctions)
+
 add_executable(circle src/circle.cpp)
+
+registerFilesToFormat(FILES src/circle.cpp)
+
 target_link_libraries(circle PUBLIC rclcpp::rclcpp std_msgs::std_msgs
 geometry_msgs::geometry_msgs__rosidl_typesupport_cpp
 )

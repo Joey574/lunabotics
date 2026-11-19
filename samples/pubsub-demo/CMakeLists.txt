@@ -14,10 +14,22 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 
+
+find_program(CLANG_FORMAT NAMES clang-format REQUIRED)
+
+list(APPEND CMAKE_MODULE_PATH
+  "${CMAKE_CURRENT_SOURCE_DIR}/../../cmake"
+)
+
+include(helpfulFunctions)
+
 add_executable(talker src/pub.cpp)
 target_link_libraries(talker PUBLIC rclcpp::rclcpp std_msgs::std_msgs)
 add_executable(listener src/sub.cpp)
 target_link_libraries(listener PUBLIC rclcpp::rclcpp std_msgs::std_msgs)
+
+registerFilesToFormat(FILES src/pub.cpp)
+
 
 install(TARGETS
   talker
