@@ -35,7 +35,7 @@ target_link_libraries(talker PUBLIC rclcpp::rclcpp std_msgs::std_msgs)
 add_executable(listener src/sub.cpp)
 target_link_libraries(listener PUBLIC rclcpp::rclcpp std_msgs::std_msgs)
 
-registerFilesToFormat(FILES src/pub.cpp)
+registerFilesToFormat(FILES src/pub.cpp src/sub.cpp)
 
 
 install(TARGETS
