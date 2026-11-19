@@ -10,6 +10,10 @@ function(registerFilesToFormat)
 		return()
 	endif()
 
+    if (NOT TARGET format-check)
+        add_custom_target(format-check)
+    endif()
+    
 	if (NOT TARGET_FILES)
 		message("Files list is empty")
 		return()
